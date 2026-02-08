@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@config "../../tailwind.config.js";
+
+html {
+  min-height: 100%;
+}
+
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-left {
+  padding-left: env(safe-area-inset-left);
+}
+
+.safe-right {
+  padding-right: env(safe-area-inset-right);
+}
+
+.routine-chip-enter {
+  animation: chip-fade-in 0.2s ease-out forwards;
+}
+
+.routine-chip-exit {
+  animation: chip-fade-out 0.2s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes chip-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes chip-fade-out {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+
+.routine-table td,
+.routine-table tr {
+  transition: all 0.2s ease-out;
+}
